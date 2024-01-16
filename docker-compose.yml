@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  apache:
+      image: php:7.4.11-apache
+      restart: always
+      container_name: apache
+      ports:
+        - '8081:80'
+        - '8443:443'
+      volumes:
+        - ./docker/www:/var/www/html
+      command: bash -c "git clone https://github.com/Okiod/openinov/tree/054cbd1ac82f8bcdae9a7592bba5094c40c46a23/epsi"
+
