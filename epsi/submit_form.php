@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Chemin du fichier CSV où les données seront sauvegardées
     $csvFilePath = "data.csv";
 
+
     // Ouvre le fichier CSV en mode append
     $csvFile = fopen($csvFilePath, 'a');
 
