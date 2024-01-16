@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Demande de Renseignements</title>
+<style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<form action="submit_form.php" method="post">
+  <fieldset>
+    <legend>DEMANDE DE RENSEIGNEMENTS</legend>
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom"><br><br>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom"><br><br>
+
+    <label for="ville">Ville :</label>
+    <input type="text" id="ville" name="ville"><br><br>
+
+    <label for="code_postal">Code Postal :</label>
+    <input type="text" id="code_postal" name="code_postal"><br><br>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="tel">Téléphone :</label>
+    <input type="tel" id="tel" name="tel"><br><br>
+
+ 
+      <legend>Niveau BAC :</legend>
+      <input type="radio" id="sans" name="bac" value="sans">
+      <label for="sans">Sans</label><br>
+    
+      <input type="radio" id="bac" name="bac" value="bac">
+      <label for="bac">BAC</label><br>
+    
+      <input type="radio" id="bac+2" name="bac" value="bac+2">
+      <label for="bac+2">BAC+2</label><br>
+    
+      <input type="radio" id="bac+3" name="bac" value="bac+3">
+    <label for="bac+3">BAC+3</label><br>
+    
+      <input type="radio" id="bac+5" name="bac" value="bac+5">
+      <label for="bac+5">BAC+5</label><br>
+<br><br>
+
+    <label for="section">Section/Spécialité :</label>
+    <input type="section" id="section" name="section"><br><br>
+
+    <label for="Etablissement">Etablissement :</label>
+    <input type="Etablissement" id="Etablissement" name="Etablissement"><br><br>
+
+    <input type="checkbox" id="contact_email" name="contact_pref" value="email">
+    <label for="contact_email">Je souhaite être recontacté(e) par email</label><br>
+
+    <input type="checkbox" id="contact_sms" name="contact_pref" value="sms">
+    <label for="contact_sms">Je souhaite être recontacté(e) par SMS</label><br><br>
+
+    
+    <!-- Section de choix de formation -->
+    <section>
+      <h3>Je suis intéressé(e) par les formations suivantes :</h3>
+      <input type="checkbox" id="msc" name="formation" value="msc">
+      <label for="msc">MSc</label><br>
+    
+      <input type="checkbox" id="msc_2" name="formation" value="msc_2">
+      <label for="msc_2">MSc 2ème année</label><br>
+    
+      <input type="checkbox" id="msc_securite" name="formation" value="msc_securite">
+      <label for="msc_securite">MSc Expert en systèmes d'information</label><br>
+    
+      <input type="checkbox" id="devops" name="formation" value="devops">
+      <label for="devops">DevOps</label><br>
+    
+      <input type="checkbox" id="bachelor" name="formation" value="bachelor">
+      <label for="bachelor">Bachelor</label><br>
+    
+      <input type="checkbox" id="bachelor_2" name="formation" value="bachelor_2">
+      <label for="bachelor_2">Bachelor 2ème année</label><br>
+    
+      <input type="checkbox" id="bachelor_3" name="formation" value="bachelor_3">
+      <label for="bachelor_3">Bachelor 3ème année</label><br>
+    </section>
+
+
+    <div>
+      <input type="checkbox" id="consentement" name="consentement" required>
+      <label for="consentement">
+        J'autorise la collecte de mes données saisies dans ce formulaire et je valide que ma signature électronique est équivalente à une signature manuscrite.
+      </label>
+    </div>
+    <label type="date" id="date" name="date"><br><br>
+    
+    <script>
+      window.onload = function() {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // Janvier est 0 !
+        var yyyy = today.getFullYear();
+    
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById('date').value = today;
+      };
+    </script>
+    <button type="submit">Envoyer</button>
+  </fieldset>
+</form>
+</body>
+</html>
