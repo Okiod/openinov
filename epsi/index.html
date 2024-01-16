@@ -10,7 +10,7 @@
   </style>
 </head>
 <body>
-  
+
 <form action="submit_form.php" method="post">
   <fieldset>
     <legend>DEMANDE DE RENSEIGNEMENTS</legend>
@@ -63,39 +63,71 @@
     <input type="checkbox" id="contact_sms" name="contact_pref" value="sms">
     <label for="contact_sms">Je souhaite être recontacté(e) par SMS</label><br><br>
 
+    <fieldset>
+      <legend>Principales motivations dans le choix de votre école :</legend>
+      <div>
+        <input type="checkbox" id="notoriete" name="motivation" value="notoriete">
+        <label for="notoriete">Notoriété de l'école</label><br>
+      </div>
+      
+      <div>
+        <input type="checkbox" id="proximite" name="motivation" value="proximite">
+        <label for="proximite">Proximité par rapport au domicile</label><br>
+      </div>
+      
+      <div>
+        <input type="checkbox" id="cout" name="motivation" value="cout">
+        <label for="cout">Coût de la vie (hébergement, transports etc.)</label><br>
+      </div>
+      
+      <div>
+        <input type="checkbox" id="offres" name="motivation" value="offres">
+        <label for="offres">Offres d'alternance proposées</label><br>
+      </div>
+      
+      <div>
+        <input type="checkbox" id="autre" name="motivation" value="autre">
+        <label for="autre">Autre :</label>
+        <input type="text" id="autre_texte" name="autre_motivation"><br>
+      </div>
+        </fieldset>
     
     <!-- Section de choix de formation -->
     <section>
       <h3>Je suis intéressé(e) par les formations suivantes :</h3>
-      <input type="checkbox" id="msc" name="formation" value="msc">
-      <label for="msc">MSc</label><br>
-    
-      <input type="checkbox" id="msc_2" name="formation" value="msc_2">
-      <label for="msc_2">MSc 2ème année</label><br>
-    
-      <input type="checkbox" id="msc_securite" name="formation" value="msc_securite">
-      <label for="msc_securite">MSc Expert en systèmes d'information</label><br>
-    
-      <input type="checkbox" id="devops" name="formation" value="devops">
-      <label for="devops">DevOps</label><br>
-    
-      <input type="checkbox" id="bachelor" name="formation" value="bachelor">
-      <label for="bachelor">Bachelor</label><br>
-    
-      <input type="checkbox" id="bachelor_2" name="formation" value="bachelor_2">
-      <label for="bachelor_2">Bachelor 2ème année</label><br>
-    
-      <input type="checkbox" id="bachelor_3" name="formation" value="bachelor_3">
-      <label for="bachelor_3">Bachelor 3ème année</label><br>
+      <h4>Parcours Socle Numérique :</h4>
+      <input type="checkbox" id="sn1" name="formation" value="sn1">
+      <label for="sn1">1ère année</label>
+      <input type="checkbox" id="sn2" name="formation" value="sn2">
+      <label for="sn2">2ème année</label><br>
+
+      <h4>Bachelor :</h4>
+      <input type="checkbox" id="dev" name="formation" value="dev">
+      <label for="dev">DevOps</label>
+      <input type="checkbox" id="sys" name="formation" value="sys">
+      <label for="sys">SysOps</label><br>
+
+      <h4>Msc - Expert en Informatique et Sytème d'Information :</h4>
+      <input type="checkbox" id="i1i" name="formation" value="i1i">
+      <label for="i1i">1ère année</label>
+      <input type="checkbox" id="i2i" name="formation" value="i2i">
+      <label for="i2i">2ème année</label><br>
+
+      <h4>Msc - Expert en Cybersécurité:</h4>
+      <input type="checkbox" id="i1c" name="formation" value="i1c">
+      <label for="i1c">1ère année</label>
+      <input type="checkbox" id="i2c" name="formation" value="i2c">
+      <label for="i2c">2ème année</label><br>
     </section>
 
-
+  <fieldset>
     <div>
       <input type="checkbox" id="consentement" name="consentement" required>
       <label for="consentement">
         J'autorise la collecte de mes données saisies dans ce formulaire et je valide que ma signature électronique est équivalente à une signature manuscrite.
       </label>
     </div>
+  </fieldset>
     <label type="date" id="date" name="date"><br><br>
     
     <script>
@@ -109,6 +141,7 @@
         document.getElementById('date').value = today;
       };
     </script>
+    
     <button type="submit">Envoyer</button>
   </fieldset>
 </form>
