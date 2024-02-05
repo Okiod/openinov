@@ -35,6 +35,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contactSms = isset($_POST['contact_sms']) ? 'Oui' : 'Non';
     $date = $_POST['date'];
 
+    $monsieurChecked = isset($_POST['sexe']) && in_array('monsieur', $_POST['sexe']);
+    $madameChecked = isset($_POST['sexe']) && in_array('madame', $_POST['sexe']);
+
+    if ($monsieurChecked && $madameChecked) {
+        $sexe = 'Autre';
+    } elseif ($monsieurChecked) {
+        $sexe = 'Monsieur';
+    } elseif ($madameChecked) {
+        $sexe = 'Madame';
+    } else {
+        $sexe = 'Non spécifié'; // ou laissez cette chaîne vide si vous préférez
+    }
+
     $formationsInteressees = isset($_POST['formation']) ? implode(', ', $_POST['formation']) : '';
 
     // Concaténez toutes les motivations choisies en une chaîne
