@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupère les données du formulaire
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
+    // Récupère les données du formulaire
+    $sexe = $_POST['sexe'] ?? 'Non spécifié'; // Utilisez 'Non spécifié' ou une valeur par défaut si rien n'est choisi
     $ville = $_POST['ville'];
     $codePostal = $_POST['code_postal'];
     $email = $_POST['email'];
@@ -38,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Créer une ligne de données pour le CSV
     $formData = [
-        $nom, $prenom, $ville, $codePostal, $email,
+        $nom, $prenom, $sexe, $ville, $codePostal, $email,
         $telephone, $niveauBac, $section, $etablissement,
         $contactEmail, $contactSms, $date, $formations,
         $consentement

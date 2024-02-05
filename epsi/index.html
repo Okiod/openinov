@@ -89,7 +89,7 @@
         text-align: center; /* Centre le logo horizontalement */
         box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optionnel: ajoute une ombre pour un effet de profondeur */
         }
-        
+
         img {
             height: 100px; /* Hauteur du logo, ajustez selon vos besoins */
             width: auto; /* Garde les proportions du logo */
@@ -113,6 +113,24 @@
 
     <label for="prenom">Prénom :</label>
     <input type="text" id="prenom" name="prenom"><br><br>
+
+    <!-- Sexe - Radios inputs -->
+<fieldset>
+  <legend>Sexe :</legend>
+  
+  <div class="radio-align">
+      <input type="radio" id="monsieur" name="sexe" value="M.">
+      <label for="monsieur">M.</label>
+  </div>
+  <div class="radio-align">
+      <input type="radio" id="madame" name="sexe" value="Mme">
+      <label for="madame">Mme</label>
+  </div>
+  <div class="radio-align">
+      <input type="radio" id="autre" name="sexe" value="Autre">
+      <label for="autre">Autre</label>
+  </div>
+</fieldset>
 
     <label for="ville">Ville :</label>
     <input type="text" id="ville" name="ville"><br><br>
