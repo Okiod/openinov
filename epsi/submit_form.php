@@ -20,11 +20,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
     }
 
-    // ... (autres champs déjà présents)
-
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $sexe = $_POST['sexe'];
+    $adresse = $_POST['adresse'];
+    $ville = $_POST['ville'];
+    $codePostal = $_POST['code_postal'];
+    $email = $_POST['email'];
+    $telephone = $_POST['tel'];
+    $niveauBac = $_POST['bac'];
+    $section = $_POST['section'];
+    $etablissement = $_POST['Etablissement'];
+    $contactEmail = isset($_POST['contact_email']) ? 'Oui' : 'Non';
+    $contactSms = isset($_POST['contact_sms']) ? 'Oui' : 'Non';
+    $date = $_POST['date'];
     // Concaténez toutes les motivations choisies en une chaîne
     $motivations = isset($_POST['motivation']) ? implode(', ', $_POST['motivation']) : '';
     $autreMotivation = $_POST['autre_motivation'] ?? '';
+    $consentement = isset($_POST['consentement']) ? 'Oui' : 'Non';
 
     // Créer une ligne de données pour le CSV (ajouter $motivations et $autreMotivation à la fin)
     $formData = [
