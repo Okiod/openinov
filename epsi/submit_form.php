@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contactSms = isset($_POST['contact_sms']) ? 'Oui' : 'Non';
     $date = $_POST['date'];
 
-    $formations = isset($_POST['formations']) ? implode(', ', $_POST['formations']) : '';
+    $formationsInteressees = isset($_POST['formation']) ? implode(', ', $_POST['formation']) : '';
 
     // Concaténez toutes les motivations choisies en une chaîne
     $motivations = isset($_POST['motivation']) ? implode(', ', $_POST['motivation']) : '';
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $formData = [
         $nom, $prenom, $sexe, $ville, $codePostal, $email,
         $telephone, $niveauBac, $section, $etablissement,
-        $contactEmail, $contactSms, $date, $formations,
+        $contactEmail, $contactSms, $date, $formationsInteressees,
         $consentement, $motivations, $autreMotivation
     ];
     $isEmptyLine = true;
