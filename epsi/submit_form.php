@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ... (autres champs déjà présents)
 
     // Concaténez toutes les motivations choisies en une chaîne
-    $motivations = implode(', ', array_filter($_POST['motivation'] ?? [], fn($value) => !empty($value)));
+    $motivations = isset($_POST['motivation']) ? implode(', ', $_POST['motivation']) : '';
     $autreMotivation = $_POST['autre_motivation'] ?? '';
 
     // Créer une ligne de données pour le CSV (ajouter $motivations et $autreMotivation à la fin)
