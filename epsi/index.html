@@ -82,10 +82,25 @@
           display: flex;
           align-items: center;
         }
+
+        header {
+        background-color: #FFF; /* Couleur de fond du bandeau, ajustez selon vos préférences */
+        padding: 10px 0; /* Espacement vertical à l'intérieur du bandeau */
+        text-align: center; /* Centre le logo horizontalement */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optionnel: ajoute une ombre pour un effet de profondeur */
+        }
+        
+        img {
+            height: 100px; /* Hauteur du logo, ajustez selon vos besoins */
+            width: auto; /* Garde les proportions du logo */
+        }
         
     </style>
 </head>
 <body>
+<header>
+    <img src="logoEpsiFondBlanc.svg" alt="Logo EPSI" style="width:200px; height:auto;"> <!-- Ajustez la taille selon vos besoins -->
+</header>
 
 <form action="submit_form.php" method="post">
 
