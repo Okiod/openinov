@@ -12,38 +12,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Si le fichier n'existe pas, crée l'entête du CSV
     if (filesize($csvFilePath) == 0) {
         fputcsv($csvFile, [
-            'Nom', 'Prénom', 'Ville', 'Code Postal', 'Email', 
+            'Nom', 'Prénom', 'Sexe', 'Ville', 'Code Postal', 'Email', 
             'Téléphone', 'Niveau BAC', 'Section/Spécialité', 'Etablissement', 
             'Contact par Email', 'Contact par SMS', 'Date', 'Formations Intéressées', 
-            'Consentement'
+            'Consentement', 'Motivations', 'Autre Motivation'
         ]);
     }
 
-    // Récupère les données du formulaire
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    // Récupère les données du formulaire
-    $sexe = $_POST['sexe'] ?? 'Non spécifié'; // Utilisez 'Non spécifié' ou une valeur par défaut si rien n'est choisi
-    $ville = $_POST['ville'];
-    $codePostal = $_POST['code_postal'];
-    $email = $_POST['email'];
-    $telephone = $_POST['tel'];
-    $niveauBac = $_POST['bac'];
-    $section = $_POST['section'];
-    $etablissement = $_POST['Etablissement'];
-    $contactEmail = isset($_POST['contact_email']) ? 'Oui' : 'Non';
-    $contactSms = isset($_POST['contact_sms']) ? 'Oui' : 'Non';
-    $date = $_POST['date'];
-    // Concaténez toutes les formations choisies en une chaîne
-    $formations = implode(', ', array_filter($_POST['formation'] ?? [], fn($value) => !empty($value)));
-    $consentement = isset($_POST['consentement']) ? 'Oui' : 'Non';
+    // ... (autres champs déjà présents)
 
-    // Créer une ligne de données pour le CSV
+    // Concaténez toutes les motivations choisies en une chaîne
+    $motivations = implode(', ', array_filter($_POST['motivation'] ?? [], fn($value) => !empty($value)));
+    $autreMotivation = $_POST['autre_motivation'] ?? '';
+
+    // Créer une ligne de données pour le CSV (ajouter $motivations et $autreMotivation à la fin)
     $formData = [
         $nom, $prenom, $sexe, $ville, $codePostal, $email,
         $telephone, $niveauBac, $section, $etablissement,
         $contactEmail, $contactSms, $date, $formations,
-        $consentement
+        $consentement, $motivations, $autreMotivation
     ];
 
     // Écriture des données dans le fichier CSV
