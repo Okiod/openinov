@@ -57,6 +57,23 @@
         <img src="logoEpsiFondBlanc.svg" alt="Logo">
     <h1>Données enregistrées</h1>
     <a href="data.csv" download="data.csv" style="margin-bottom: 20px; display: block;">Télécharger les données</a>
+    <button id="saveToUSB">Sauvegarder sur USB</button>
+
+<script>
+    document.getElementById('saveToUSB').addEventListener('click', function() {
+        fetch('save_to_usb.php', {
+            method: 'POST',
+        })
+        .then(response => response.text())
+        .then((response) => {
+            alert(response); // Afficher la réponse du serveur (Succès ou message d'erreur)
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
     <table>
         <thead>
             <tr>
