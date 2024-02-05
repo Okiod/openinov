@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Visualisation des données</title>
+    <link rel="icon" type="image/png" href="chemin/vers/le/faviconV2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+        
+        /* Styles existants */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -18,15 +25,44 @@
         th {
             background-color: #f2f2f2;
         }
+
+        /* Nouveaux styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: black; /* Couleur du texte ajustée pour la lisibilité */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ... Autres styles ... */
+        /* Styles pour le formulaire, les entrées, les boutons, etc. */
+
+        header {
+            background-color: #FFF;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        img {
+            height: 100px;
+            width: auto;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <!-- Insérez votre logo ici -->
+        <img src="logoEpsiFondBlanc.svg" alt="Logo">
     <h1>Données enregistrées</h1>
+    <a href="data.csv" download="data.csv" style="margin-bottom: 20px; display: block;">Télécharger les données</a>
     <table>
         <thead>
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
+                <th>Sexe</th>
                 <th>Ville</th>
                 <th>Code Postal</th>
                 <th>Email</th>
@@ -39,6 +75,8 @@
                 <th>Date</th>
                 <th>Formations Intéressées</th>
                 <th>Consentement</th>
+                <th>Motivations</th>
+                <th>Autre Motivation</th>
             </tr>
         </thead>
         <tbody>
