@@ -33,9 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $contactEmail, $contactSms, $date, $formations,
         $consentement, $motivations, $autreMotivation
     ];
+    $isEmptyLine = true;
+    foreach ($formData as $item) {
+        if (!empty($item)) {
+            $isEmptyLine = false;
+            break;
+        }
+    }
 
     // Écriture des données dans le fichier CSV
-    fputcsv($csvFile,$formData);
+    fputcsv($csvFile, $formData);
     // Fermeture du fichier
     fclose($csvFile);
 
