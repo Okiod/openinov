@@ -5,8 +5,8 @@
 // Vérifie si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Chemin du fichier CSV où les données seront sauvegardées
-    $csvFilePath = "data.csv";
-
+    $csvFilePath = "/media/usb/data_epsi.csv";
+    
     // Ouvre le fichier CSV en mode append
     $csvFile = fopen($csvFilePath, 'a');
 
@@ -39,13 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $madameChecked = isset($_POST['sexe']) && in_array('madame', $_POST['sexe']);
 
     if ($monsieurChecked && $madameChecked) {
-        $sexe = 'Autre';
+        $sexe = 'Autre';        // si les 2 cochés
     } elseif ($monsieurChecked) {
         $sexe = 'Monsieur';
     } elseif ($madameChecked) {
         $sexe = 'Madame';
     } else {
-        $sexe = 'Non spécifié'; // ou laissez cette chaîne vide si vous préférez
+        $sexe = 'Non spécifié'; // si rien coché
     }
 
     $formationsInteressees = isset($_POST['formation']) ? implode(', ', $_POST['formation']) : '';
