@@ -56,7 +56,7 @@
         <!-- Insérez votre logo ici -->
         <img src="logoEpsiFondBlanc.svg" alt="Logo">
     <h1>Données enregistrées</h1>
-    <a href="data.csv" download="data.csv" style="margin-bottom: 20px; display: block;">Télécharger les données</a>
+    <a href="/media/usb/data_epsi.csv" download="/media/usb/data_epsi.csv" style="margin-bottom: 20px; display: block;">Télécharger les données</a>
     <button id="saveToUSB">Sauvegarder sur USB</button>
 
 <script>
@@ -98,7 +98,7 @@
         </thead>
         <tbody>
             <?php
-                $csvFilePath = 'data.csv';
+                $csvFilePath = '/media/usb/data_epsi.csv';
                 if (($handle = fopen($csvFilePath, 'r')) !== FALSE) {
                     // Ignorer la ligne d'en-tête
                     if (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {

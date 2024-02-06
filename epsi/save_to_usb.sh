@@ -7,7 +7,7 @@ USB_MOUNT="/media/usb"
 if mount | grep -q $USB_MOUNT; then
     DATE=$(date +%Y-%m-%d)
     FILENAME="data_$DATE.csv"
-    cp /var/www/openinov/epsi/data.csv $USB_MOUNT/$FILENAME
+    cp /media/usb/data_epsi.csv $USB_MOUNT/$FILENAME
     echo "Fichier sauvegardé sur USB: $FILENAME"
 else
     echo "Clé USB non trouvée."
