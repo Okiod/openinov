@@ -34,20 +34,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contactEmail = isset($_POST['contact_email']) ? 'Oui' : 'Non';
     $contactSms = isset($_POST['contact_sms']) ? 'Oui' : 'Non';
     $date = $_POST['date'];
-
-    $monsieurChecked = isset($_POST['sexe']) && in_array('monsieur', $_POST['sexe']);
-    $madameChecked = isset($_POST['sexe']) && in_array('madame', $_POST['sexe']);
-
-    if ($monsieurChecked && $madameChecked) {
-        $sexe = 'Autre';        // si les 2 cochés
-    } elseif ($monsieurChecked) {
-        $sexe = 'Monsieur';
-    } elseif ($madameChecked) {
-        $sexe = 'Madame';
+    
+    if (isset($_POST['sexe']) && is_array($_POST['sexe'])) {
+        $selectedSexes = $_POST['sexe'];
+        $monsieurChecked = in_array('monsieur', $selectedSexes);
+        $madameChecked = in_array('madame', $selectedSexes);
+    
+        if ($monsieurChecked && $madameChecked) {
+            $sexe = 'Autre';        // si les 2 cochés
+        } elseif ($monsieurChecked) {
+            $sexe = 'Monsieur';
+        } elseif ($madameChecked) {
+            $sexe = 'Madame';
+        } else {
+            // Cela ne devrait pas se produire car le cas où aucun n'est coché est géré par le isset()
+            $sexe = 'Non spécifié';
+        }
     } else {
         $sexe = 'Non spécifié'; // si rien coché
     }
-
     $formationsInteressees = isset($_POST['formation']) ? implode(', ', $_POST['formation']) : '';
 
     // Concaténez toutes les motivations choisies en une chaîne
