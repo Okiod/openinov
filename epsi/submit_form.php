@@ -33,8 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $etablissement = $_POST['Etablissement'];
     $contactEmail = isset($_POST['contact_email']) ? 'Oui' : 'Non';
     $contactSms = isset($_POST['contact_sms']) ? 'Oui' : 'Non';
+
+
+
+
     $date = $_POST['date'];
-    
+
     if (isset($_POST['sexe']) && is_array($_POST['sexe'])) {
         $selectedSexes = $_POST['sexe'];
         $monsieurChecked = in_array('monsieur', $selectedSexes);
