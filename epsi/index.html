@@ -13,6 +13,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
+            font-size: 20px;
             color: white;
             margin: 0;
             padding: 0;
@@ -49,6 +50,7 @@
         input, textarea {
             width: 100%;
             padding: 8px;
+            font-size: 20px;
             margin: 5px 0 5px 0;
             box-sizing: border-box;
             border: 0px;
@@ -139,12 +141,8 @@
     <input type="tel" id="tel" name="tel"><br><br>
 
 <!-- Niveau BAC - Radios inputs -->
-    <legend>Niveau BAC :</legend>
+    <legend>Diplômes en cours :</legend>
     
-    <div class="radio-align">
-        <input type="radio" id="sans" name="bac" value="sans">
-        <label for="sans">Sans</label>
-    </div>
     <div class="radio-align">
         <input type="radio" id="bac" name="bac" value="bac">
         <label for="bac">BAC</label>
@@ -160,7 +158,13 @@
     <div class="radio-align">
         <input type="radio" id="bac+5" name="bac" value="bac+5">
         <label for="bac+5">BAC+5</label>
-    </div><br>
+    </div>
+    <div class="radio-align">
+      <input type="radio" id="autrebc" name="bac" value="autrebc">
+      <label for="autrebc">Autre :</label>
+    </div>
+    <input type="text" id="autre_texte" name="autre_motivation">
+    <br>
 
     <label for="section">Section/Spécialité :</label>
     <input type="section" id="section" name="section"><br><br>
